@@ -8,8 +8,6 @@ This repo. | 0.8308/0.7752/0.7100 | 0.6961 | 1.6015
 ## How to run:
 
 ``` python
-# cd to `Pix2Pix` folder and run command bellow
-
 # train
 CUDA_VISIBLE_DEVICES=1 python Pix2Pix/train.py \
   --batch_size=1 \
