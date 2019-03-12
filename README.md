@@ -9,7 +9,7 @@ This repo. | 0.8308/0.7752/0.7100 | 0.6961 | 1.6015
 
 ``` python
 # train
-CUDA_VISIBLE_DEVICES=1 python Pix2Pix/train.py \
+CUDA_VISIBLE_DEVICES=1 python train.py \
   --batch_size=1 \
   --mode='train' \
   --conv_type='conv2d' \
@@ -21,8 +21,8 @@ CUDA_VISIBLE_DEVICES=1 python Pix2Pix/train.py \
   --loss_type='HINGE' \
   --g_bce \
   --n_dis=1 \
-  --input_dir=/home/tellhow-iot/tem/webpagesaliency/pix2pix_data_2A/train \
-  --output_dir=/data/tem/webpagesaliency/output_resize_512 \
+  --input_dir=/home/tellhow-iot/tem/webpagesaliency/train \
+  --output_dir=/data/tem/webpagesaliency/output \
   --max_epochs=400 \
   --which_direction=AtoB \
   --save_freq=1180 \
@@ -38,7 +38,7 @@ CUDA_VISIBLE_DEVICES=1 python Pix2Pix/train.py \
 
 
 # test
-CUDA_VISIBLE_DEVICES=1 python Pix2Pix/train.py \
+CUDA_VISIBLE_DEVICES=1 python train.py \
   --batch_size=1 \
   --mode='test' \
   --conv_type='conv2d' \
@@ -50,8 +50,8 @@ CUDA_VISIBLE_DEVICES=1 python Pix2Pix/train.py \
   --loss_type='HINGE' \
   --g_bce \
   --n_dis=1 \
-  --input_dir=/home/tellhow-iot/tem/webpagesaliency/pix2pix_data_2A/val \
-  --output_dir=/data/tem/webpagesaliency/output_resize_512/tem/47200 \
+  --input_dir=/home/tellhow-iot/tem/webpagesaliency/val \
+  --output_dir=/data/tem/webpagesaliency/output/tem/47200 \
   --max_epochs=400 \
   --which_direction=AtoB \
   --save_freq=1180 \
@@ -61,8 +61,8 @@ CUDA_VISIBLE_DEVICES=1 python Pix2Pix/train.py \
   --TTUR \
   --l1_weight=0.05 \
   --gan_weight=1.0 \
-  --checkpoint_dir=/data/tem/webpagesaliency/output_resize_512/ \
-  --checkpoint=/data/tem/webpagesaliency/output_resize_512/model-47200 \
+  --checkpoint_dir=/data/tem/webpagesaliency/output/ \
+  --checkpoint=/data/tem/webpagesaliency/output/model-47200 \
   --multiple_A \
   --net_type='ResNet' \
   --upsampe_method=depth_to_space
